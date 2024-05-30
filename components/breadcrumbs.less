@@ -1,0 +1,46 @@
+@import "@/assets/styles/colors.less";
+
+.breadcrumbs {
+  font-size: 0.875rem;
+
+  & .breadcrumbs__list {
+    display: flex;
+  }
+
+  & .breadcrumbs__item {
+    position: relative;
+    margin-right: 10px;
+    padding-right: 10px;
+    width: auto;
+
+    & > a {
+      color: @color-primary-darker;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      top: calc(50% - 3.5px);
+      width: 5px;
+      height: 8px;
+      background-color: @color-primary-darker;
+      clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+
+      & > a {
+        cursor: auto;
+        color: @color-secondary-text;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+  }
+}

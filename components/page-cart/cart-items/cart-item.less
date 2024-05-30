@@ -1,0 +1,29 @@
+@import "@/assets/styles/colors.less";
+
+.cart-item {
+  margin-bottom: 25px;
+  padding: 0 50px 20px 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__product-photo {
+    margin-right: 30px;
+  }
+
+  &__product-info {
+    margin-right: 80px;
+  }
+
+  &__quantity-controls {
+    margin-right: 84px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}

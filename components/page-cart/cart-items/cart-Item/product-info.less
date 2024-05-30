@@ -1,0 +1,25 @@
+@import "@/assets/styles/colors.less";
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 263px;
+
+  & .product-info__name {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: @color-primary-dark;
+  }
+
+  & .product-info__description {
+    margin-bottom: 7px;
+    font-size: 0.75rem;
+    color: @color-primary;
+  }
+
+  & .product-info__article {
+    font-size: 0.875rem;
+    color: @color-secondary-text;
+  }
+}

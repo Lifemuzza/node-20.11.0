@@ -1,0 +1,66 @@
+@import "@/assets/styles/colors.less";
+
+.product-card {
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  background-color: @color-background-light;
+  user-select: none;
+  cursor: grab;
+
+  &__photo {
+    @size: 245px;
+
+    margin-bottom: 5px;
+    width: @size;
+    height: @size;
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+  }
+
+  &__details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-size: 1.375rem;
+  }
+
+  &__description {
+    margin-bottom: 39px;
+    flex: 1;
+  }
+
+  &__prices {
+    margin-bottom: 8px;
+    font-size: 1.375rem;
+    font-weight: 500;
+    font-family: Roboto, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+    &-values_eu {
+      margin-bottom: 0;
+      font-size: 1rem;
+      color: @color-secondary-text;
+    }
+  }
+
+  & .product-card__btn {
+    margin-top: 20px;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}

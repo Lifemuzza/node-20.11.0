@@ -1,0 +1,36 @@
+@import "@/assets/styles/colors.less";
+
+.cart {
+  display: flex;
+  width: auto;
+
+  & .cart__icon {
+    margin-right: 12px;
+    align-self: center;
+
+    &-img {
+      width: 28px;
+      height: 25px;
+    }
+  }
+
+  & .cart__item {
+    font-size: 0.75rem;
+
+    & > * {
+      display: block;
+      width: max-content;
+      line-height: 1.45;
+    }
+
+    &-title {
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+
+    &-count {
+      color: @color-secondary-text;
+    }
+  }
+}

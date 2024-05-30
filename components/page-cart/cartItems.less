@@ -1,0 +1,45 @@
+@import "@/assets/styles/colors.less";
+
+.cart-items {
+  min-height: 590px;
+  max-width: 800px;
+
+  &__header {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+    color: @color-secondary-text;
+
+    & > * {
+      width: auto;
+    }
+  }
+
+  &__title {
+    margin-right: 22px;
+    font-size: 2.75rem;
+    line-height: 1.09;
+    color: @color-primary-dark;
+  }
+
+  &__count {
+    font-size: 1.125rem;
+  }
+
+  &__clear-btn {
+    position: relative;
+    margin-left: auto;
+    font-size: 0.875rem;
+    font-weight: normal;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      background-color: @color-secondary-text;
+    }
+  }
+}

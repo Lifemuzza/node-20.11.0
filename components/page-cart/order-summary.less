@@ -1,0 +1,68 @@
+@import "@/assets/styles/colors.less";
+
+.order-summary {
+  padding: 35px 30px;
+  border-radius: 5px;
+  background-color: @color-background-light;
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  &__details {
+    margin-bottom: 16px;
+    padding-bottom: 30px;
+  }
+
+  &__row {
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  &__highlight,
+  &__row {
+    display: flex;
+
+    &-value {
+      font-family: "Roboto", sans-serif, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    & > *:last-child {
+      white-space: nowrap;
+      flex: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__highlight {
+    margin-bottom: 30px;
+
+    & > * {
+      line-height: 1;
+    }
+    &-label {
+      line-height: 1;
+      font-size: 1.125rem;
+    }
+
+    &-value {
+      font-size: 1.625rem;
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    & > * {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

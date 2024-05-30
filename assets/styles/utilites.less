@@ -1,0 +1,15 @@
+@import "@/assets/styles/colors.less";
+
+.underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: @color-gray-light;
+  }
+}

@@ -1,0 +1,81 @@
+@import "@/assets/styles/colors.less";
+
+.quantity-controls {
+  position: relative;
+  display: flex;
+
+  & > * {
+    margin-right: 1px;
+    width: 34px;
+    height: 34px;
+    background-color: @color-background-light;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__product-price {
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    font-size: 0.75rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    font-size: 0.875rem;
+  }
+
+  &__decrease,
+  &__increase {
+    position: relative;
+
+    &::before {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__decrease {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 1px;
+      background-color: black;
+      transform-origin: center;
+      border-radius: 2px;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__increase {
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 8px;
+      background-color: black;
+      transform-origin: center;
+      border-radius: 2px;
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}
