@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { formatCurrency } from "@/helpers/index.js";
+import { formatCurrency } from "@/utils/formattingUtils.js";
 
 const props = defineProps({
   name: {

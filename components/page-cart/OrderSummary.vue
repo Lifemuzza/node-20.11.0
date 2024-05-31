@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { formatCurrency } from "@/helpers/index.js";
+import { formatCurrency } from "@/utils/formattingUtils.js";
 import BuyInOneClickButton from "@/components/page-cart/order-summary/BuyInOneClickButton.vue";
 import SubmitButton from "@/components/page-cart/order-summary/SubmitButton.vue";
 import { useStore } from "vuex";
