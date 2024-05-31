@@ -41,7 +41,8 @@ export const cartStore = createStore({
   },
   actions: {
     async submitOrder({ state }) {
-      const url = ''
+      const url = "/api/submit";
+
       try {
         const response = await fetch(url, {
           method: "POST",

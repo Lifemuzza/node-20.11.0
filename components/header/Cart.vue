@@ -32,7 +32,3 @@ const totalAmount = computed(() => store.getters.getTotalAmount);
 <style lang="less">
 @import "./cart.less";
 </style>
-..feat(utils): Move formatCurrency function to utils directory
-
-- Moved the formatCurrency function from helpers to utils for better organization
-- Created countHelpers.js in helpers directory to handle product counting logic
