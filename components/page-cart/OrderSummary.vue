@@ -32,7 +32,6 @@
 
 <script setup>
 import { formatCurrency } from "@/utils/formattingUtils.js";
-import SubmitButton from "@/components/page-cart/order-summary/SubmitButton.vue";
 import { useStore } from "vuex";
 import { computed } from "vue";
 
