@@ -1,5 +1,5 @@
 <template>
-  <button @click="buyInOneClick">
+  <button @click="submitOrder">
     <slot></slot>
   </button>
 </template>
@@ -9,7 +9,7 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 
-function buyInOneClick() {
-  store.dispatch('submitOrder');
-}
+const submitOrder = () => {
+  store.dispatch("submitOrder");
+};
 </script>

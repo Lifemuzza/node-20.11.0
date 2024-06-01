@@ -26,7 +26,7 @@ const cartList = computed(() => store.getters.getItems);
 const productsQuantity = computed(() => store.getters.getProductsQuantity);
 
 onMounted(() => {
-  store.dispatch("fetchItems");
+  store.dispatch("loadCartItems");
 });
 </script>
 

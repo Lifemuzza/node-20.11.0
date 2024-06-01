@@ -1,4 +1,6 @@
 import { createStore } from "vuex";
+import { fetchCartItems } from "@/api/products.js";
+import { submitOrderAPI } from "@/api/orders.js";
 
 export const cartStore = createStore({
   state() {
@@ -41,35 +43,15 @@ export const cartStore = createStore({
   },
   actions: {
     async submitOrder({ state }) {
-      const url = "/api/submit";
-
       try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(state.cartItems),
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! ${response.status}`);
-        }
-
-        console.log(await response.json());
+        return submitOrderAPI(state.cartItems);
       } catch (error) {
         console.error(error);
       }
     },
-    async fetchItems({ commit }) {
+    async loadCartItems({ commit }) {
       try {
-        const response = await fetch("/products/index.json");
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch items");
-        }
-
-        const items = await response.json();
+        const items = await fetchCartItems();
         commit("setItems", items);
       } catch (error) {
         console.error(error);
