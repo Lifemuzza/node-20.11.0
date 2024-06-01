@@ -16,9 +16,7 @@ export const relatedProductsModule = {
 
         commit("setRelatedProducts", products);
       } catch (error) {
-        this.error = error.message;
-      } finally {
-        // this.isLoading = false;
+        console.log(error.message);
       }
     },
   },
