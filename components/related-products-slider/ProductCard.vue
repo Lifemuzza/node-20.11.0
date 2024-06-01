@@ -3,24 +3,19 @@
     <div class="product-card__photo">
       <img class="product-card__photo-img" :src="image" :alt="name" />
     </div>
-    <div class="product-card__details">
-      <h2 class="product-card__name">{{ name }}</h2>
-      <p class="product-card__description">{{ description }}</p>
-      <div class="product-card__prices">
-        <p class="product-card__prices-values">
-          {{ `${formatCurrency(priceRu.min)} ₽ - ${formatCurrency(priceRu.max)}` }} ₽
-        </p>
-        <p class="product-card__prices-values product-card__prices-values_eu">
-          {{ `${formatCurrency(priceEu.min, "de-De")} € - ${formatCurrency(priceEu.max, "de-De")}` }} €
-        </p>
-      </div>
-      <button class="product-card__btn custom-button custom-button_primary">Подробнее</button>
-    </div>
+    <ProductDetails
+      :name="name"
+      :description="description"
+      :priceRu="priceRu"
+      :priceEu="priceEu"
+      :formatCurrency="formatCurrency"
+    />
   </div>
 </template>
 
 <script setup>
 import { formatCurrency } from "@/utils/formattingUtils.js";
+import ProductDetails from '@/components/related-products-slider/product-card/ProductDetails.vue';
 
 const props = defineProps({
   name: {
