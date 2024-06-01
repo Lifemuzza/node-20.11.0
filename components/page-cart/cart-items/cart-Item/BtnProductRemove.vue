@@ -14,7 +14,6 @@ import { useStore } from "vuex";
 const store = useStore();
 
 const removeItem = () => {
-  console.log(props.id);
   store.dispatch("removeItemFromCart", props.id);
 };
 </script>
