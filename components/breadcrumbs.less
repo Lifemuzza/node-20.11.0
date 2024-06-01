@@ -28,15 +28,17 @@
       clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
     }
 
-    &_active {
-      margin-right: 0;
-      padding-right: 0;
-      cursor: auto;
-      color: @color-secondary-text;
+  }
+  
+  & .router-link-active {
+    margin-right: 0;
+    padding-right: 0;
 
-      &::after {
-        display: none;
-      }
+    cursor: auto;
+    color: @color-secondary-text;
+
+    &::after {
+      display: none;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="cart">
+  <NuxtLink to="/cart" class="cart">
     <div class="cart__icon">
       <svg class="cart__icon-img">
         <use xlink:href="#cart" />
@@ -10,7 +10,7 @@
       <span class="cart__item-count">{{ productsCountLabel }}</span>
       <span class="cart__item-price">{{ formatCurrency(totalAmount) }} ₽</span>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>
