@@ -25,5 +25,4 @@ export async function fetchRelatedProducts() {
   } catch (error) {
     console.error("Error fetching related-products:", error);
   }
-
 }

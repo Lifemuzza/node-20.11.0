@@ -45,29 +45,14 @@
 import ProductCard from "./related-products-slider/ProductCard.vue";
 import { ref, onMounted } from "vue";
 import { useStore } from "vuex";
-// import {relatedProductsStore} from "@/store/relatedProductsStore.js"
 import "swiper/swiper-bundle.css";
 
-// const store = relatedProductsStore();
 const slidePreview = 4;
 const swiper = ref(null);
-const products = ref([]);
 const sliderPagination = ref(null);
 
 const store = useStore();
-// const fetchGetProducts = async () => {
-//   try {
-//     const response = await fetch("/relatedProducts/index.json");
-//     if (!response.ok) {
-//       throw new Error("Failed");
-//     }
 
-//     const data = await response.json();
-//     products.value = data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
 const productsList = computed(()=> store.getters.getRelatedProducts )
 function setPaginationStyles(el) {
   if (!el) return;

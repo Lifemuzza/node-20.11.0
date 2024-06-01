@@ -20,11 +20,11 @@
       <b class="order-summary__highlight-value">{{ formatCurrency(totalAmount) }} ₽</b>
     </div>
     <div class="order-summary__actions">
-      <BuyInOneClickButton class="order-summary__actions-btn custom-button custom-button_primary"
-        >Оформить заказ</BuyInOneClickButton
+      <CustomButton @click="submitOrder" class="order-summary__actions-btn custom-button_primary"
+        >Оформить заказ</CustomButton
       >
-      <SubmitButton class="order-summary__actions-btn custom-button custom-button_secondary"
-        >Купить в один клик</SubmitButton
+      <CustomButton @click="submitOrder" class="order-summary__actions-btn custom-button_secondary"
+        >Купить в один клик</CustomButton
       >
     </div>
   </div>
@@ -32,13 +32,15 @@
 
 <script setup>
 import { formatCurrency } from "@/utils/formattingUtils.js";
-import BuyInOneClickButton from "@/components/page-cart/order-summary/BuyInOneClickButton.vue";
 import SubmitButton from "@/components/page-cart/order-summary/SubmitButton.vue";
 import { useStore } from "vuex";
 import { computed } from "vue";
 
 const store = useStore();
 
+const submitOrder = () => {
+  store.dispatch("submitOrder");
+};
 const totalAmount = computed(() => store.getters.getTotalAmount);
 const totalQuantity = computed(() => store.getters.getTotalQuantity);
 const counselingCheckbox = computed(() => store.getters.getCounselingCheckbox);
