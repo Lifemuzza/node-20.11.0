@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, computed } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { PAGE_NAMES } from "@/utils/constans.js";
 
