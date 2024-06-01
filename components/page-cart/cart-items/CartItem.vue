@@ -3,7 +3,7 @@
     <ProductPhoto class="cart-item__product-photo" :name="item.name" :image="item.image" />
     <ProductInfo
       class="cart-item__product-info"
-      name="item.name"
+      :name="item.name"
       :description="item.description"
       :article="item.article"
     />

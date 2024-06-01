@@ -28,13 +28,13 @@
       :slidesPerView="slidePreview"
       class="slider__body"
     >
-      <SwiperSlide v-for="(item, index) in products" :key="index" class="slide">
+      <SwiperSlide v-for="(item, index) in productsList" :key="index" class="slide">
         <ProductCard
           :name="item.name"
           :image="item.image"
           :description="item.description"
-          :priceRu="item.price"
-          :priceEu="item.price"
+          :priceRu="item.price.ru"
+          :priceEu="item.price.eu"
         />
       </SwiperSlide>
     </Swiper>
@@ -44,28 +44,31 @@
 <script setup>
 import ProductCard from "./related-products-slider/ProductCard.vue";
 import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
+// import {relatedProductsStore} from "@/store/relatedProductsStore.js"
 import "swiper/swiper-bundle.css";
 
+// const store = relatedProductsStore();
 const slidePreview = 4;
 const swiper = ref(null);
 const products = ref([]);
 const sliderPagination = ref(null);
 
+const store = useStore();
+// const fetchGetProducts = async () => {
+//   try {
+//     const response = await fetch("/relatedProducts/index.json");
+//     if (!response.ok) {
+//       throw new Error("Failed");
+//     }
 
-const fetchGetProducts = async () => {
-  try {
-    const response = await fetch("/relatedProducts/index.json");
-    if (!response.ok) {
-      throw new Error("Failed");
-    }
-
-    const data = await response.json();
-    products.value = data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
+//     const data = await response.json();
+//     products.value = data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+const productsList = computed(()=> store.getters.getRelatedProducts )
 function setPaginationStyles(el) {
   if (!el) return;
 
@@ -73,9 +76,10 @@ function setPaginationStyles(el) {
   el.style.color = "#212121";
 }
 
-onMounted(async () => {
-  await fetchGetProducts();
 
+
+onMounted(async () => {
+  store.dispatch("loadRelatedProducts");
   sliderPagination.value = document.querySelector(".swiper-pagination-current");
   setPaginationStyles(sliderPagination.value);
 });

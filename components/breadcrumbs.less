@@ -3,19 +3,19 @@
 .breadcrumbs {
   font-size: 0.875rem;
 
-  & .breadcrumbs__list {
+  &__list {
     display: flex;
   }
 
-  & .breadcrumbs__item {
+  &__list-item {
     position: relative;
     margin-right: 10px;
     padding-right: 10px;
     width: auto;
+  }
 
-    & > a {
-      color: @color-primary-darker;
-    }
+  &__link {
+    color: @color-primary-darker;
 
     &::after {
       content: "";
@@ -28,19 +28,15 @@
       clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
     }
 
-    &:last-child {
+    &_active {
       margin-right: 0;
       padding-right: 0;
-
-      & > a {
-        cursor: auto;
-        color: @color-secondary-text;
-      }
+      cursor: auto;
+      color: @color-secondary-text;
 
       &::after {
         display: none;
       }
     }
-
   }
 }

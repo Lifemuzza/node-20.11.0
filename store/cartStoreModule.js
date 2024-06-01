@@ -1,8 +1,8 @@
-import { createStore } from "vuex";
-import { fetchCartItems } from "@/api/products.js";
+
+import { fetchCartItems, fetchRelatedProducts } from "@/api/products.js";
 import { submitOrderAPI } from "@/api/orders.js";
 
-export const cartStore = createStore({
+export const cartModule = {
   state() {
     return {
       cartItems: [],
@@ -90,4 +90,4 @@ export const cartStore = createStore({
       return state.cartItems.reduce((total, item) => total + item.quantity, 0);
     },
   },
-});
+};

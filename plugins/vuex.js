@@ -1,5 +1,5 @@
-import { cartStore } from "@/store/cartStore.js";
+import { store } from "@/store/index.js";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(cartStore);
+  nuxtApp.vueApp.use(store);
 });

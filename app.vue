@@ -6,5 +6,8 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
+
+<style lang="less">
+@import "@/assets/styles/index.less";
+</style>

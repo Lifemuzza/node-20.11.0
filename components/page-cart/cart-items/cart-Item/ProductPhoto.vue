@@ -1,6 +1,6 @@
 <template>
   <div class="product-photo">
-    <img class="product-photo__img" :src="`/products/${image}.png`" :alt="name" />
+    <img class="product-photo__img" :src="image" :alt="name" />
   </div>
 </template>
 

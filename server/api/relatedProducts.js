@@ -4,70 +4,112 @@ export default defineEventHandler((event) => {
       id: 1,
       name: "BXC",
       description: "Вытяжное устройство для механической системы вентиляции",
-      image: "1",
+      image: "/relatedProducts/1.png",
       price: {
-        min: 6848,
-        max: 56584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 6848,
+          max: 56584,
+        },
       },
     },
     {
       id: 2,
       name: "G2H",
       description: "Многофункциональное вытяжное устройство для естественной и гибридной вентиляции",
-      image: "2",
+      image: "/relatedProducts/2.png",
       price: {
-        min: 77448,
-        max: 256584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 6848,
+          max: 56584,
+        },
       },
     },
     {
       id: 3,
       name: "GHN",
       description: "Вытяжное устройство с датчиком присутствия",
-      image: "3",
+      image: "/relatedProducts/3.png",
       price: {
-        min: 6848,
-        max: 56584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 6848,
+          max: 56584,
+        },
       },
     },
     {
       id: 4,
       name: "TDA",
       description: "Вытяжное устройство с датчиком присутствия",
-      image: "4",
+      image: "/relatedProducts/4.png",
       price: {
-        min: 6848,
-        max: 56584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 6848,
+          max: 56584,
+        },
       },
     },
     {
       id: 5,
       name: "G2H",
       description: "Многофункциональное вытяжное устройство для естественной и гибридной вентиляции",
-      image: "5",
+      image: "/relatedProducts/5.png",
       price: {
-        min: 6848,
-        max: 56584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 6848,
+          max: 56584,
+        },
       },
     },
     {
       id: 6,
       name: "GHN",
       description: "Вытяжное устройство с датчиком присутствия",
-      image: "6",
+      image: "/relatedProducts/6.png",
       price: {
-        min: 6848,
-        max: 56584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 5848,
+          max: 86584,
+        },
       },
     },
     {
       id: 7,
       name: "TDA",
       description: "Вытяжное устройство с датчиком присутствия",
-      image: "7",
+      image: "/relatedProducts/7.png",
       price: {
-        min: 6848,
-        max: 56584,
+        ru: {
+          min: 6848,
+          max: 56584,
+        },
+        eu: {
+          min: 6848,
+          max: 56584,
+        },
       },
     },
   ];

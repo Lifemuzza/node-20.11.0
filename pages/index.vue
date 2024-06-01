@@ -1,7 +1,6 @@
 <template>
   <main class="page-cart">
     <div class="page-cart__container container">
-      <Breadcrumbs class="page-cart__breadcrumbs" />
       <div class="page-cart__content">
         <CartItems class="page-cart__cart-items" />
         <OrderSummary class="page-cart__order-summary" />
@@ -14,6 +13,10 @@
 <script setup>
 import CartItems from "@/components/page-cart/CartItems.vue";
 import OrderSummary from "@/components/page-cart/OrderSummary.vue";
+import { onMounted } from "vue";
+import { useStore } from "vuex";
+const store = useStore()
+onMounted(() => console.log(store))
 </script>
 
 <style lang="less">
