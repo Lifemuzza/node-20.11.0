@@ -44,10 +44,8 @@ export const cartModule = {
   actions: {
     async submitOrder({ state, commit }) {
       try {
-        const response = await submitOrderAPI(state.cartItems);
+        await submitOrderAPI(state.cartItems);
         commit("setModalMessage", "Спасибо за покупку!");
-
-        return response;
       } catch (error) {
         commit("setModalMessage", "Что-то пошло не так! Пожалуйста, повторите попытку.");
         console.error(error);
