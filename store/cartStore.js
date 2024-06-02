@@ -1,5 +1,5 @@
-import { fetchCartItems, fetchRelatedProducts } from "@/api/products.js";
-import { submitOrderAPI } from "@/api/orders.js";
+import { fetchCartItems } from "@/services/products.js";
+import { submitOrderAPI } from "@/services/orders.js";
 
 /** @type {import('vuex').StoreOptions} */
 export const cartModule = {
@@ -43,11 +43,13 @@ export const cartModule = {
   },
   actions: {
     async submitOrder({ state, commit }) {
-      commit("setModalMessage", "Спасибо за покупку!");
       try {
-        return submitOrderAPI(state.cartItems);
+        const response = await submitOrderAPI(state.cartItems);
+        commit("setModalMessage", "Спасибо за покупку!");
+
+        return response;
       } catch (error) {
-      commit("setModalMessage", "Что-то пошло не так! Пожалуйста, повторите попытку.");
+        commit("setModalMessage", "Что-то пошло не так! Пожалуйста, повторите попытку.");
         console.error(error);
       }
     },

@@ -1,4 +1,4 @@
-import { fetchRelatedProducts } from "@/api/products.js";
+import { fetchRelatedProducts } from "@/services/products.js";
 
 export const relatedProductsModule = {
   state: () => ({
