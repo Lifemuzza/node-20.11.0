@@ -2,7 +2,7 @@
   <div class="cart-items">
     <div class="cart-items__header">
       <h1 class="cart-items__title">Ваша корзина</h1>
-      <span class="cart-items__count">{{ productsQuantity }} товара</span>
+      <span class="cart-items__count">{{ formatProductsCount(productsQuantity) }}</span>
       <button @click="clearItemsList" class="cart-items__clear-btn">Очистить корзину</button>
     </div>
     <div class="cart-items__list">
@@ -18,6 +18,7 @@ import CartItem from "@/components/page-cart/cart-items/CartItem.vue";
 import Counseling from "@/components/page-cart/cart-items/Counseling.vue";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
+import { formatProductsCount } from '@/helpers/countHelpers.js';
 
 const store = useStore();
 
